@@ -5,12 +5,15 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ frostiq/cryptomedia",
+    "prepare:polter": "mustache config/polter.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:geist": "mustache config/geist.json subgraph.template.yaml > subgraph.yaml",
     "create-local": "graph create --node http://localhost:8020/ frostiq/cryptomedia",
     "remove-local": "graph remove --node http://localhost:8020/ frostiq/cryptomedia",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 frostiq/cryptomedia"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.19.0",
-    "@graphprotocol/graph-ts": "0.19.0"
+    "@graphprotocol/graph-cli": "0.84.0",
+    "@graphprotocol/graph-ts": "0.32.0",
+    "mustache": "^4.2.0"
   }
 }
